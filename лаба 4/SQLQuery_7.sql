@@ -1,0 +1,21 @@
+use UNIVER
+select ISNULL(TEACHER.TEACHER_NAME, '***') [Преподаватель], SUBJECT.SUBJECT_NAME [Дисциплина]
+	from TEACHER inner join PULPIT
+	on TEACHER.PULPIT = PULPIT.PULPIT
+	full outer join SUBJECT
+	on PULPIT.PULPIT = SUBJECT.PULPIT
+	where TEACHER.TEACHER_NAME is null;
+
+select ISNULL(SUBJECT.SUBJECT_NAME, '***') [Дисциплина], TEACHER.TEACHER_NAME [Преподаватель]
+	from PULPIT inner join TEACHER
+	on TEACHER.PULPIT = PULPIT.PULPIT
+	full outer join SUBJECT
+	on PULPIT.PULPIT = SUBJECT.PULPIT
+	where SUBJECT.SUBJECT_NAME  is null;
+
+select SUBJECT.SUBJECT_NAME [Дисциплина], TEACHER.TEACHER_NAME [Преподаватель]
+	from PULPIT inner join TEACHER
+	on TEACHER.PULPIT = PULPIT.PULPIT
+	full outer join SUBJECT
+	on PULPIT.PULPIT = SUBJECT.PULPIT
+	where SUBJECT.SUBJECT_NAME is not null and TEACHER.TEACHER_NAME is not null;
