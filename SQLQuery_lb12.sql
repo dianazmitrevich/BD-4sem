@@ -1,7 +1,7 @@
 ﻿-- 1
 use UNIVER;
 set nocount on;
-
+-- drop procedure PSUBJECT
 GO
 CREATE PROCEDURE PSUBJECT AS
 BEGIN

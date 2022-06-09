@@ -21,13 +21,13 @@ if exists (select * from  SYS.OBJECTS where OBJECT_ID = object_id(N'DBO.Table_1'
 	print 'Таблица Table_1 есть'; 
 else print 'Таблицы Table_1 нет';
 
---DROP table Table_1
+-- DROP table Table_1
 
 -- 2
 use UNIVER
 BEGIN try
 	BEGIN TRANSACTION
-		DELETE SUBJECT WHERE SUBJECT LIKE 'test%';
+		--DELETE SUBJECT WHERE SUBJECT LIKE 'test%';
 		INSERT INTO SUBJECT VALUES('test1', 'test1', 'ИСиТ'), ('test2', 'test2', 'ИСиТ');
 	commit transaction;
 END try
